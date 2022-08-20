@@ -1,0 +1,10 @@
+number= float(input ("Enter number="))
+if (number>=100 and number<1000):
+    remain=number%100
+    d2=remain//10
+    d1=remain%10
+    d3=number//100
+    if(d1==d3):
+        print("it is a palimdrome.")
+    else:
+        print("It is not.")
