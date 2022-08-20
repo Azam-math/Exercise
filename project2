@@ -1,0 +1,7 @@
+number=float(input("Enter number:"))
+sum=0
+index=1
+while(index<=number):
+    sum=sum+index
+    index+=1
+print("sum={}".format(sum))
