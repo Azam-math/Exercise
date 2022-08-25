@@ -1,0 +1,15 @@
+grades=["a", "b", "c", "d", "e", "f"]
+position=-1
+index=0
+len=len(grades)
+al=input("Enter al:")
+
+while(index<len):
+    if(al==grades[index]):
+        position=index
+        break
+    index+=1
+if(position==len-1):
+    print(grades[0])
+else:
+    print(grades[position+1])
