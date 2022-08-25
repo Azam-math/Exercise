@@ -1,0 +1,19 @@
+s=[2, 6, 3, 4, 5]
+grad=[2, 5, 8, 9, 0]
+total=[]
+index=0
+size=len(s)
+size1=len(grad)
+while(index<size):
+    key=s[index]
+    ind=0
+    found=False
+    while(ind<size1):
+        if (key==grad[ind]):
+            found=True
+            break
+        ind+=1
+    if(found==False):
+        total.append(key)
+    index+=1
+print(total)
