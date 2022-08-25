@@ -1,0 +1,15 @@
+s=[2, 6, 3, 4, 5]
+grad=[2, 5, 8, 9, 0]
+grad1=[]
+index=0
+size=len(s)
+size1=len(grad)
+while(index<size):
+    key=s[index]
+    ind=0
+    while(ind<size1):
+        if (key==grad[ind]):
+            grad1.append(key)
+        ind+=1
+    index+=1
+print(grad1)
