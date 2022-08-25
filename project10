@@ -1,0 +1,12 @@
+s=[2, 6, 3, 4, 5]
+grad=[2, 5, 8, 9, 0]
+grad1=[]
+index=0
+size=len(s)
+size1=size
+sum=0
+while(index<size):
+    sum=s[index]+grad[index]
+    grad1.append(sum)
+    index+=1
+print(grad1)
