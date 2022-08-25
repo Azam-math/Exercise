@@ -1,0 +1,8 @@
+grades = ["a", "b", "c", "d", "e", "f"]
+al = input("Enter al:")
+
+index = grades.index(al)
+if (index==len(grades)-1):
+    print(grades[0])
+else:
+    print(grades[index+1])
