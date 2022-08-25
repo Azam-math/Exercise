@@ -1,0 +1,10 @@
+import random
+length= 4
+pdice=0
+index=1
+g=[]
+while(index<=length):
+    dice=random.randint(1, 6)
+    index+=1
+    g.append(dice)
+print(g)
