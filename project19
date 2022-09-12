@@ -1,0 +1,22 @@
+n=158234
+c=0
+g=[]
+number =n
+while(number>0):
+    number=number//10
+    c+=1
+
+if(c%2==0):
+    for i in range(c):
+        remaind=n%10
+        n=n//10
+        g.append(remaind)
+print(g)
+g1=[]
+for j in range(len(g)//2):
+    sum=g[j]+g[(len(g)-1-j)]
+    g1.append(sum)
+print(g1)
+
+
+
