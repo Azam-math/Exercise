@@ -1,0 +1,6 @@
+dic=dict()
+dic[0]="sat"
+dic[1]="sun"
+print(dic)
+print(dic[0])
+
