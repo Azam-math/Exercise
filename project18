@@ -1,0 +1,14 @@
+alpha=[]
+for i in range(97, 97+26):
+    alpha.append(chr(i))
+for i in range(65, 65+26):
+    alpha.append(chr(i))
+alpha.append(' ')
+alpha.append(' ')
+print(alpha)
+sentence=("my name is Azam")
+coding=""
+for ch in sentence:
+    index=alpha.index(ch)
+    coding+=alpha[index+1]
+print(coding)
