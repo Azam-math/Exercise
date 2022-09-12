@@ -1,0 +1,11 @@
+number=float(input("Enter number:"))
+s=0
+f=1
+div=0
+index=1
+while(index<=number):
+    s+=index
+    f=f*index
+    div=div+(f/s)
+    index+=1
+print(div)
