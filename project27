@@ -1,0 +1,10 @@
+n= float (input("n="))
+index=1
+while(index<=n//2):
+    r=n%index
+    if(r==0):
+        print("index={}".format(index))
+    index += 1
+
+
+
