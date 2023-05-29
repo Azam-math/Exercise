@@ -1,0 +1,43 @@
+
+import networkx as nx
+import matplotlib.pyplot as plt
+DG=nx.Graph()
+DG.add_nodes_from(['GB', 'FPU','MPU', 'TPU', 'OIL', 'STOCK'])
+
+DG.add_weighted_edges_from([('GB','FPU', 0.34), ('MPU','GB',1.29), ('TPU','GB', 0.71), ('OIL','GB', 2.25), ('STOCK','GB',0.97),
+('MPU','FPU',0.13),('FPU','TPU',0.06),('FPU', 'OIL',1.27), ('STOCK','FPU',0.17), ('TPU','MPU',0.15),
+('MPU','OIL',0.42), ('MPU','STOCK',0.46), ('OIL','TPU',0.24),('TPU','STOCK',0.27), ('OIL','STOCK',1.06)])
+pos=nx.spring_layout(DG)
+nx.draw_networkx(DG,pos, labels={n: n for n in DG.nodes()})
+l={('GB','FPU'): 0.34, ('MPU','GB'):1.29, ('TPU','GB'):0.71, ('OIL','GB'):2.25, ('STOCK','GB'):0.97,
+('MPU','FPU'):0.13,('FPU','TPU'):0.06,('FPU', 'OIL'):1.27, ('STOCK','FPU'):0.17, ('TPU','MPU'):0.15,
+('MPU','OIL'):0.42, ('MPU','STOCK'):0.46, ('OIL','TPU'):0.24,('TPU','STOCK'):0.27, ('OIL','STOCK'):1.06}
+nx.draw_networkx_edge_labels(DG, pos, edge_labels=l)
+nx.draw_networkx(DG, pos, with_labels=True, node_size=1200, node_color='pink', edge_color='green')
+plt.show()
+from networkx.algorithms import tree
+list1=list(tree.minimum_spanning_edges(DG, algorithm='kruskal'))
+print(list1)
+G1=nx.DiGraph()
+G1.add_nodes_from(['GB', 'FPU','MPU', 'TPU', 'OIL', 'STOCK'] )
+G1.add_weighted_edges_from([('FPU', 'TPU',0.06), ('FPU', 'MPU', 0.13), ('STOCK', 'FPU', 0.17), ('OIL', 'TPU', 0.24),
+('FPU', 'GB', 0.34)])
+pos=nx.spring_layout(G1)
+nx.draw_networkx(G1,pos, labels={n: n for n in G1.nodes()})
+l1={('FPU', 'TPU'): 0.06, ('FPU', 'MPU'): 0.13, ('STOCK', 'FPU'): 0.17, ('OIL', 'TPU'): 0.24, ('FPU', 'GB'): 0.34}
+nx.draw_networkx_edge_labels(G1, pos, edge_labels=l1)
+nx.draw_networkx(G1, pos, with_labels=True, node_size=1200, node_color='pink', edge_color='green')
+plt.show()
+
+
+d1=G1.out_degree
+print(d1)
+
+
+
+
+
+
+
+
+
