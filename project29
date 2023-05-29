@@ -1,0 +1,30 @@
+import numpy as np
+import pandas as pd
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G=nx.Graph()
+G.add_nodes_from(['GB', 'FPU','MPU', 'TPU', 'OIL', 'STOCK'])
+G.add_edges_from([('GB','FPU'), ('GB','MPU'), ('GB','TPU'), ('OIL','GB'), ('STOCK','GB'), ('FPU','MPU'),('FPU','TPU'),
+                   ('MPU', 'TPU'), ('OIL','FPU'), ('STOCK','FPU'),  ('OIL','MPU'), ('STOCK','MPU'), ('OIL','TPU'),
+                   ('STOCK','TPU'), ('OIL','STOCK')])
+
+G.add_weighted_edges_from([('GB','FPU', -0.72), ('GB','MPU',3), ('GB','TPU', 1), ('OIL','GB', 5), ('STOCK','GB',1),
+                            ('FPU','MPU',1),('FPU','TPU',1),
+                   ('MPU', 'TPU',1), ('OIL','FPU',1), ('STOCK','FPU',1),  ('OIL','MPU',10), ('STOCK','MPU',1), ('OIL','TPU',5),
+                   ('STOCK','TPU',1), ('OIL','STOCK',4)])
+
+nx.draw_shell(G, with_labels=True, node_size=1200, node_color='pink', edge_color='green')
+plt.show()
+
+from networkx.algorithms import tree
+list(tree.minimum_spanning_edges(G, algorithm='prim'))
+
+
+
+
+
+
+
+
+
